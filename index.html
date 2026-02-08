@@ -6,69 +6,122 @@
     <title>Sifdine Training</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-900 text-gray-100 font-sans pb-10">
+<body class="bg-gray-900 text-gray-100 font-sans pb-20">
 
-    <header class="p-6 bg-yellow-500 text-gray-900 shadow-xl">
-        <h1 class="text-2xl font-bold italic uppercase">🛡️ Blindage Sifdine</h1>
-        <p class="text-sm font-semibold opacity-80">Objectif : Protéger les lombaires</p>
+    <header class="p-6 bg-yellow-500 text-gray-900 shadow-xl flex justify-between items-center">
+        <div>
+            <h1 class="text-2xl font-bold italic uppercase">🛡️ Blindage Sifdine</h1>
+            <p class="text-sm font-semibold opacity-80">Suivi Lombaires & CrossFit</p>
+        </div>
     </header>
 
     <main class="p-4 space-y-6">
         
         <section class="bg-gray-800 border-l-4 border-blue-400 p-4 rounded-r-lg shadow">
-            <h2 class="text-blue-400 font-bold mb-2">🏢 Routine Bureau (Quotidien)</h2>
-            <div class="flex items-center gap-3 py-2 border-b border-gray-700">
-                <input type="checkbox" class="w-5 h-5 accent-blue-400">
-                <span>10 Glute Squeezes / 2h</span>
-            </div>
-            <div class="flex items-center gap-3 py-2">
-                <input type="checkbox" class="w-5 h-5 accent-blue-400">
-                <span>5 Air Squats (Pause café)</span>
+            <h2 class="text-blue-400 font-bold mb-2 uppercase text-xs">🏢 Routine Bureau</h2>
+            <div class="space-y-3">
+                <div class="flex items-center justify-between">
+                    <span class="text-sm">Glute Squeezes / 2h</span>
+                    <input type="checkbox" id="check-glute" class="w-6 h-6 accent-blue-400">
+                </div>
+                <div class="flex items-center justify-between">
+                    <span class="text-sm">Air Squats (Pause)</span>
+                    <input type="checkbox" id="check-squat" class="w-6 h-6 accent-blue-400">
+                </div>
             </div>
         </section>
 
         <div id="workouts" class="space-y-4">
-            <div class="bg-gray-800 p-4 rounded-lg shadow">
-                <h3 class="text-yellow-500 font-bold border-b border-gray-700 pb-2 mb-2 italic">LUNDI : Force & Posture</h3>
-                <ul class="space-y-2 text-sm">
-                    <li>🔘 Gobelet Squat : 4 x 10</li>
-                    <li>🔘 RDL Unilatéral : 3 x 12/jambe</li>
-                    <li>🔘 Face Pulls : 3 x 20</li>
-                </ul>
+            
+            <div class="bg-gray-800 p-4 rounded-lg shadow border border-gray-700">
+                <h3 class="text-yellow-500 font-bold border-b border-gray-700 pb-2 mb-3 italic uppercase">Lundi : Force & Posture</h3>
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-xs text-gray-400">Gobelet Squat (4x10)</label>
+                        <input type="text" id="note-lundi-1" placeholder="Poids / Ressenti" class="w-full bg-gray-700 p-2 rounded mt-1 outline-none focus:ring-1 focus:ring-yellow-500 text-sm">
+                    </div>
+                    <div>
+                        <label class="block text-xs text-gray-400">RDL Unilatéral (3x12)</label>
+                        <input type="text" id="note-lundi-2" placeholder="Poids / Ressenti" class="w-full bg-gray-700 p-2 rounded mt-1 outline-none focus:ring-1 focus:ring-yellow-500 text-sm">
+                    </div>
+                </div>
             </div>
 
-            <div class="bg-gray-800 p-4 rounded-lg shadow">
-                <h3 class="text-yellow-500 font-bold border-b border-gray-700 pb-2 mb-2 italic">MERCREDI : Double Session</h3>
-                <p class="text-xs text-gray-400 mb-2 uppercase">Matin (Accessoire)</p>
-                <ul class="space-y-2 text-sm mb-3">
-                    <li>🔘 Hip Thrust : 4 x 12</li>
-                    <li>🔘 Farmer Walk : 4 x 50m</li>
-                </ul>
-                <p class="text-xs text-gray-400 mb-2 uppercase">Soir (WOD)</p>
-                <p class="text-sm text-red-400 italic">Attention aux Deadlifts/Sauts !</p>
+            <div class="bg-gray-800 p-4 rounded-lg shadow border border-gray-700">
+                <h3 class="text-yellow-500 font-bold border-b border-gray-700 pb-2 mb-3 italic uppercase">Mercredi : Accessoires</h3>
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-xs text-gray-400">Hip Thrust (4x12)</label>
+                        <input type="text" id="note-merc-1" placeholder="Poids / Ressenti" class="w-full bg-gray-700 p-2 rounded mt-1 outline-none focus:ring-1 focus:ring-yellow-500 text-sm">
+                    </div>
+                    <div>
+                        <label class="block text-xs text-gray-400">Farmer Walk (4x50m)</label>
+                        <input type="text" id="note-merc-2" placeholder="Poids / Ressenti" class="w-full bg-gray-700 p-2 rounded mt-1 outline-none focus:ring-1 focus:ring-yellow-500 text-sm">
+                    </div>
+                </div>
             </div>
 
-            <div class="bg-gray-800 p-4 rounded-lg shadow">
-                <h3 class="text-yellow-500 font-bold border-b border-gray-700 pb-2 mb-2 italic">JEUDI : Double Session</h3>
-                <p class="text-xs text-gray-400 mb-2 uppercase">Matin (Gainage)</p>
-                <ul class="space-y-2 text-sm mb-3">
-                    <li>🔘 Rowing : 3 x 15</li>
-                    <li>🔘 Side Plank : 3 x 45s/côté</li>
-                </ul>
-                <p class="text-xs text-gray-400 mb-2 uppercase">Soir (Gym)</p>
-                <p class="text-sm text-red-400 italic">Core gainé, pas de cambrure excessive.</p>
+            <div class="bg-gray-800 p-4 rounded-lg shadow border border-gray-700">
+                <h3 class="text-yellow-500 font-bold border-b border-gray-700 pb-2 mb-3 italic uppercase">Vendredi : Décompression</h3>
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-xs text-gray-400">Split Squats (3x10)</label>
+                        <input type="text" id="note-vend-1" placeholder="Poids / Ressenti" class="w-full bg-gray-700 p-2 rounded mt-1 outline-none focus:ring-1 focus:ring-yellow-500 text-sm">
+                    </div>
+                    <div>
+                        <label class="block text-xs text-gray-400">Hyperextensions (3x15)</label>
+                        <input type="text" id="note-vend-2" placeholder="Poids / Ressenti" class="w-full bg-gray-700 p-2 rounded mt-1 outline-none focus:ring-1 focus:ring-yellow-500 text-sm">
+                    </div>
+                </div>
             </div>
 
-            <div class="bg-gray-800 p-4 rounded-lg shadow">
-                <h3 class="text-yellow-500 font-bold border-b border-gray-700 pb-2 mb-2 italic">VENDREDI : Décompression</h3>
-                <ul class="space-y-2 text-sm">
-                    <li>🔘 Split Squat : 3 x 10/jambe</li>
-                    <li>🔘 Hyperextension 45° : 3 x 15</li>
-                    <li>🔘 Dead Hang : 3 x 1 min</li>
-                </ul>
-            </div>
         </div>
+
+        <button onclick="resetWeek()" class="w-full py-4 bg-red-600 text-white font-bold rounded-lg shadow-lg active:bg-red-700 transition uppercase text-sm mt-6">
+            🗑️ Nouvelle Semaine (Reset)
+        </button>
+
     </main>
 
+    <script>
+        // Sélectionne tous les inputs et checkboxes
+        const inputs = document.querySelectorAll('input[type="text"], input[type="checkbox"]');
+
+        // Charger les données
+        window.onload = () => {
+            inputs.forEach(input => {
+                const savedValue = localStorage.getItem(input.id);
+                if (savedValue) {
+                    if (input.type === 'checkbox') {
+                        input.checked = savedValue === 'true';
+                    } else {
+                        input.value = savedValue;
+                    }
+                }
+            });
+        };
+
+        // Sauvegarder à chaque modification
+        inputs.forEach(input => {
+            input.addEventListener('input', () => {
+                const value = input.type === 'checkbox' ? input.checked : input.value;
+                localStorage.setItem(input.id, value);
+            });
+        });
+
+        // Fonction pour vider la semaine
+        function resetWeek() {
+            if (confirm("Vider toutes les notes pour la nouvelle semaine ?")) {
+                inputs.forEach(input => {
+                    if (input.type === 'checkbox') {
+                        input.checked = false;
+                    } else {
+                        input.value = '';
+                    }
+                    localStorage.removeItem(input.id);
+                });
+            }
+        }
+    </script>
 </body>
 </html>
